@@ -1,0 +1,127 @@
+Single exon gene:FKRP
+Single exon gene:GTDC2
+Single exon gene:DOLK
+variant not included:0
+variant not included:DESc.1379G>A 
+variant not included:DOLKc.1009C>A
+variant not included:DOLKc.1009C>T
+variant not included:DOLKc.1009G>A
+variant not included:DOLKc.1dup
+variant not included:DOLKc.431_432insA
+variant not included:DOLKc.579G>A
+variant not included:DOLKc.964C>T
+variant not included:EPM2Ac.282T>C
+variant not included:FBP1c.841C>A
+variant not included:FKRPc.1000_1017dup
+variant not included:FKRPc.1027G>C
+variant not included:FKRPc.1066G>C
+variant not included:FKRPc.1071C>G
+variant not included:FKRPc.1073C>T
+variant not included:FKRPc.1077A>C
+variant not included:FKRPc.1082T>G
+variant not included:FKRPc.1088C>G
+variant not included:FKRPc.1100T>C
+variant not included:FKRPc.1210C>T
+variant not included:FKRPc.1364C>A
+variant not included:FKRPc.1384C>T
+variant not included:FKRPc.174C>T
+variant not included:FKRPc.192C>T
+variant not included:FKRPc.235G>A
+variant not included:FKRPc.249C>T
+variant not included:FKRPc.299G>C
+variant not included:FKRPc.329G>C
+variant not included:FKRPc.341C>G
+variant not included:FKRPc.380C>G
+variant not included:FKRPc.427C>A
+variant not included:FKRPc.456C>G
+variant not included:FKRPc.567C>T
+variant not included:FKRPc.679G>C
+variant not included:FKRPc.826C>A
+variant not included:FKRPc.919T>A
+variant not included:FKRPc.941C>T
+variant not included:FKRPc.946C>A
+variant not included:GTDC2c.1219C>T
+variant not included:GTDC2c.1470G>A
+variant not included:GTDC2c.1488C>T
+variant not included:GTDC2c.365T>G
+variant not included:LOC100288262c.*38C>G
+variant not included:LOC100288545c.454+43C>A
+variant not included:LOC100288545c.506A>G
+variant not included:LOC100288545c.511C>G
+variant not included:LOC100288545c.809-14C>G
+variant not included:LOC100288545c.809-20_809-19insG
+variant not included:LOC100288545c.809-35delC
+variant not included:LOC100288545c.990+34A>C
+variant not included:LOC100288545c.991-28A>C
+variant not included:LOC100288545c.991-33A>C
+variant not included:LOC100289515c.667-31A>G
+variant not included:LOC100289515c.74-26G>A
+variant not included:PFKLc.1877+12G>A
+variant not included:SEPN1c.-14C>T
+variant not included:SEPN1c.1092+6C>G
+variant not included:SRPK3c.1519+1G>A
+variant not included:STIM2c.-12T>A
+variant not included:STIM2c.-17_-199delTT
+variant not included:STIM2c.-18_-198delTTT
+variant not included:STIM2c.101A>G
+variant not included:STIM2c.104A>G
+variant not included:STIM2c.1059G>A
+variant not included:STIM2c.1065-26A>G
+variant not included:STIM2c.1065-27G>T
+variant not included:STIM2c.1065-30G>A
+variant not included:STIM2c.119T>G
+variant not included:STIM2c.1511+7_1511+29del
+variant not included:STIM2c.175C>T
+variant not included:STIM2c.1859C>T
+variant not included:STIM2c.1863C>T
+variant not included:STIM2c.19A>G
+variant not included:STIM2c.23C>T
+variant not included:STIM2c.299A>G
+variant not included:STIM2c.303A>G
+variant not included:STIM2c.323A>C
+variant not included:STIM2c.329G>A
+variant not included:STIM2c.80T>G
+variant not included:STIM2c.82A>G
+variant not included:STIM2c.85C>G
+variant not included:STIM2c.88C>G
+variant not included:STIM2c.94C>G
+variant not included:STIM2c.98C>G
+The number of variants starting with LOC (no gene symbol assignment) equal:12
+The number of variants not parsed equal:85
+Of which the number of signel exon variants not included equal:39
+This means the number of other variants not included which are non single exon genes or a LOC gene equal:34
+
+Total breakdown of variants filtered
+
+7328 variants in total in unfiltered list (see VLookup_table_duplicates_removed.xls (spreadsheet VLookup_table_original variant list from vlookup))
+
+335 duplicate entries removed see Sheet3 from VLookup_table_duplicates_removed.xls
+
+Running total = 7328 - 335 = 6993
+
+104 variants were duplicate entries with conflicting classifications and so were concatanated together to 52 variants. This results in 6941 variants in total (see VLookup_table_duplicates_removed.csv Sheet3). 
+
+Running total = 6993 -52 = 6941
+
+85 variants were not included by running Hgvsconvert class from the python script nextgene.py . See log file above lines for breakdown of which variants were not included and spreadsheet "Breakdown of genes not translated by mutalyser.xls"
+
+Running total = 6941 -85 = 6856
+
+6856 variants wer inputted into mutalyser see MutalyserInput.csv
+
+Of the 6856 variants 5923 were SNPs with 3 of these SNPs not properly annotates so were not able to be translated by mutalyser resulting in 5920 SNP variants that wer returned by mutalyser (see MutalyserInput.xls file for the count of these SNPs)
+
+5920 SNP variants were returned to the vcf. 
+
+Removes any Classifications that are not of the format Class=ClassFloat. It also transforms the annotation from Class=ClassFloat to Class=Float
+
+bgzip -d /home/kevin/Documents/HGVS/HGVS_VLookup_GenomicCoordinates.vcf.gz  # Decompress the outputted vcf file
+
+sed -e '/^#/!{/PreviousClassification=Class[[:digit:]]\(\.[[:digit:]]$\|$\)/!d}' -e '/^#/!{/PreviousClassification=Class[[:digit:]],/d}' -e 's/PreviousClassification=Class/PreviousClassification=/g' /home/kevin/Documents/HGVS/HGVS_VLookup_GenomicCoordinates.vcf > /home/kevin/Documents/HGVS/HGVS_VLookup_GenomicCoordinates_RemoveNonFloats_IngenuityCompatible.vcf
+
+gzip vcf file and index it
+bgzip -f /home/kevin/Documents/HGVS/HGVS_VLookup_GenomicCoordinates_RemoveNonFloats_IngenuityCompatible.vcf 
+tabix -f /home/kevin/Documents/HGVS/HGVS_VLookup_GenomicCoordinates_RemoveNonFloats_IngenuityCompatible.vcf.gz
+
+
+Results in 5387 variants being returned to the vcf
